@@ -1,0 +1,385 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drive Café</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="StyleSheet.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<!-- Header -->
+  <header>
+    <a href="#" class="logo">Drive Café</a>
+    <ul> <li><a href="index.html">Home</a></li>
+    <li><a href="About.html">About</a></li> <li><a href="Menu.html">Menu</a></li>
+    <li><a href="Favorite.html">Favorite</a></li>
+<button class="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#cartPanel"> 🛒 Order List </button>
+ </ul> 
+</header>
+ 
+
+<body>
+
+<!-- ================= ORDER CART ================= --> 
+ <div class="offcanvas offcanvas-end" tabindex="-1" id="cartPanel"> 
+    <div class="offcanvas-header"> <h5>Your Order</h5> 
+<button class="btn-close" data-bs-dismiss="offcanvas"></button> 
+</div> 
+<div class="offcanvas-body"> 
+    <ul id="orderList" class="list-group mb-3"></ul> 
+    <h5>Total: $<span id="totalPrice">0</span></h5> 
+    <button class="btn btn-success w-100 mt-3" onclick="sendOrder()"> Send Order 
+    </button> 
+    <div id="orderMessage" class="alert alert-success mt-3 d-none"> ✅ Order Completed Successfully! </div> </div> </div>
+
+
+
+
+<!-- ================= MENU ================= -->
+<section class="section-che section-padding mt-5">
+ <div class="container mt-5 mb-3 pt-2 text-center">
+  <h1 class="mt-5 mb-5">Our Menu</h1>
+    <div class="row pt-2 pb-5">
+
+<!-- Drink Card -->
+             <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/icelatte.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Ice Latte 2.5$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Ice Latte', 2.5)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>
+            <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/lemon_soda.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Lemon Soda 1.5$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Lemon Soda', 1.5)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>
+            <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/peachtea.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Peach Tea 2$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Peach Tea', 2)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>
+
+            <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/greentae.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Green Tea 2$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Green Tea', 2)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>
+
+            <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/Oreo_Smoothie.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Oreo Smoothie 2$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Oreo Smoothie', 2)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>
+            <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/matchalatte.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Matcha Latte 2$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Matcha Latte', 2)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>
+
+            <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/staw_soda.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Strawberry Soda 2$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Strawberry Soda', 2)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>
+
+            <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/orange_frappe.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Orange Frappe 2$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Orange Frappe', 2)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>
+
+            <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/grape.png" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Grape Frappe 2$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Grape Frappe', 2)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>
+            
+
+            <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/watermelon.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Watermelon Frappe 2$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Watermelon Frappe', 2)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>
+
+        <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/milktea.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Milk Tea 1.5$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Milk Tea', 1.5)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>
+
+         <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/avocado_smoonthie.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Avocado Smoothie 2$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Avocado Smoothie', 2)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>   
+
+          <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/blueberry_matcha_bliss.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Blueberry Matcha Bliss 2$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Blueberry Matcha Bliss', 2)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>  
+
+      <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/Kiwi_yogurt.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Kiwi Yogurt 3$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Kiwi Yogurt', 3)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="Pic/Choco_Matcha.jpg" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-titel text-center">Chocolate Matcha 2$
+            </h5>
+            <div class="text-center">
+          <button class="btn btn-dark mt-2"
+          onclick="addOrder('Chocolate Matcha', 2)">
+          Order
+</button>
+</div>
+          </div>
+        </div>
+      </div>
+
+  
+
+</div>
+</div>
+
+<!-- FOOTER OUTSIDE MAIN (Correct Position) -->
+    <section class="footer">
+
+        <div class="box-container">
+
+            
+
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">Menu</a>
+                <a href="#">About</a>
+            
+            </div>
+
+            
+
+            <div class="box">
+                <h3>Contact Info</h3>
+                <a href="tel:+1234567890">+123-123-1234</a>
+                <a href="tel:+1112223333">+111-222-3333</a>
+                <a href="mailto:rotheavy444@gmail.com">Gmail:<br>rotheavy444@gmail.com</a>
+            </div>
+
+            <div class="box">
+                <h3>Location</h3>
+                <a href="#">Cambodia</a>
+                <a href="#">Phnom Penh</a>
+               
+            </div>
+
+        </div>
+
+        <div class="share">
+            <a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a>
+            <a href="#"><i class="fa-brands fa-twitter"></i>Twitter</a>
+            <a href="#"><i class="fa-brands fa-instagram"></i>Instagram</a>
+        
+        </div>
+
+        <div class="credit">
+            Created By <span>Drive Café</span> 
+        </div>
+
+    </section>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+
+let total = 0;
+
+
+// Add Order
+function addOrder(name, price){
+
+let list = document.getElementById("orderList");
+
+let li = document.createElement("li");
+li.className = "list-group-item d-flex justify-content-between";
+
+li.innerHTML = `
+${name}
+<span>$${price}</span>
+`;
+
+list.appendChild(li);
+
+total += price;
+document.getElementById("totalPrice").textContent = total.toFixed(2);
+
+document.getElementById("orderMessage").classList.add("d-none");
+}
+
+
+// Send Order
+function sendOrder(){
+
+if(total === 0) return;
+
+document.getElementById("orderMessage").classList.remove("d-none");
+
+document.getElementById("orderList").innerHTML = "";
+
+total = 0;
+document.getElementById("totalPrice").textContent = "0";
+
+}
+
+</script>
+ 
+
+</body>
+</html>
